@@ -1,6 +1,6 @@
 package dsa-5026251194.lw01.unguided;
 
-public abstract WashService implements Billable {
+public abstract class WashService implements Billable {
     private String id;
     private int days;
 

@@ -18,12 +18,12 @@ public class Main {
                 int units = sc.nextInt();
 
                 if (type.equals("CAR")) {
-                    washes[i].add(new CarWash(id, days));
+                    WashService.add(new CarWash(id, days));
                 } else if (type.equals("MOTORCYCLE")) {
-                    washes[i].add(new MotorcycleWash(id, days));
+                    WashService.add(new MotorcycleWash(id, days));
                 }
 
-                for (WashService wash : washes) {
+                for (WashService[] wash : washes) {
                     System.out.println(wash.summary());
                     }
             }
