@@ -1,31 +1,30 @@
 package lw01.unguided;
 
 import java.util.Scanner;
-import java.util.ArrayList;
-import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
             Scanner sc = new Scanner(Main.class.getResourceAsStream("washes.txt"));
             int n = sc.nextInt();
 
-            WashService[] washes = new WashService(n);
+            WashService[] washes = new WashService[n];
 
-            while (sc.hasNext()) {
+            for (int i = 0; i < n; i++) {
+
                 String type = sc.next();
                 String id = sc.next();
                 int days = sc.nextInt();
                 int units = sc.nextInt();
 
                 if (type.equals("CAR")) {
-                    WashService.add(new CarWash(id, days));
+                    washes[i] = new CarWash(id, days, units);
                 } else if (type.equals("MOTORCYCLE")) {
-                    WashService.add(new MotorcycleWash(id, days));
+                    washes[i] = new MotorcycleWash(id, days, units);
                 }
+            }
 
-                for (WashService[] wash : washes) {
+                for (WashService wash : washes) {
                     System.out.println(wash.summary());
                     }
-            }
-    }
+           }
 }

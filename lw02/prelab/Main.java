@@ -1,5 +1,3 @@
-import java.io.File;
-import java.io.FileNotFoundException;
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Stack;
@@ -7,14 +5,14 @@ import java.util.Scanner;
 
 public class Main {
 
-    public static void main(String[] args) throws FileNotFoundException {
+    public static void main(String[] args) {
 
         LinkedList<String[]> transactions = new LinkedList<>();
 
         LinkedList<String[]> customers = new LinkedList<>();
 
         
-            Scanner sc = new Scanner(new File("transactions.txt"));
+            Scanner sc = new Scanner(Main.class.getResourceAsStream("transactions.txt"));
 
             while (sc.hasNextLine()) {
 
